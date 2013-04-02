@@ -34,6 +34,9 @@ namespace AdapterLab
         Adapter mAdapter = new Adapter();
         Event mAvail = new Event("avail");
         Event mEStop = new Event("estop");
+
+        Event mMode = new Event("mode");
+        Event mExec = new Event("exec");
         
         public MachineTool()
         {
@@ -44,6 +47,9 @@ namespace AdapterLab
             mAvail.Value = "AVAILABLE";
 
             mAdapter.AddDataItem(mEStop);
+
+            mAdapter.AddDataItem(mMode);
+            mAdapter.AddDataItem(mExec);
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -78,6 +84,24 @@ namespace AdapterLab
                 mEStop.Value = "TRIGGERED";
             else
                 mEStop.Value = "ARMED";
+
+            if (automatic.Checked)
+                mMode.Value = "AUTOMATIC";
+            else if (mdi.Checked)
+                mMode.Value = "MANUAL_DATA_INPUT";
+            else if (edit.Checked)
+                mMode.Value = "EDIT";
+            else
+                mMode.Value = "MANUAL";
+
+            if (running.Checked)
+                mExec.Value = "ACTIVE";
+            else if (feedhold.Checked)
+                mExec.Value = "FEED_HOLD";
+            else if (stopped.Checked)
+                mExec.Value = "STOPPED";
+            else if (ready.Checked)
+                mExec.Value = "READY";
 
             mAdapter.SendChanged();
         }

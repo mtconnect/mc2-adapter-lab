@@ -8,6 +8,14 @@
         <DataItem type='AVAILABILITY' category='EVENT' id='dtop_3' name='avail'/>
         <DataItem type='EMERGENCY_STOP' category='EVENT' id='dtop_2' name='estop'/>
       </DataItems>
+      <Components>
+        <Controller name='controller' id='controller_10'>
+          <DataItems>
+            <DataItem type='CONTROLLER_MODE' category='EVENT' id='controller_11' name='mode'/>
+            <DataItem type='EXECUTION' category='EVENT' id='controller_12' name='exec'/>
+          </DataItems>
+        </Controller>
+      </Components>
     </Device>
   </Devices>
 </MTConnectDevices>
