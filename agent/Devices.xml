@@ -7,12 +7,15 @@
       <DataItems>
         <DataItem type='AVAILABILITY' category='EVENT' id='dtop_3' name='avail'/>
         <DataItem type='EMERGENCY_STOP' category='EVENT' id='dtop_2' name='estop'/>
+        <DataItem id="dtop_5" name="func" type="FUNCTIONAL_MODE" category="EVENT" />
       </DataItems>
       <Components>
         <Controller name='controller' id='controller_10'>
           <DataItems>
             <DataItem type='CONTROLLER_MODE' category='EVENT' id='controller_11' name='mode'/>
             <DataItem type='EXECUTION' category='EVENT' id='controller_12' name='exec'/>
+            <DataItem type='PROGRAM' category='EVENT' id='controller_13' name='program'/>
+            <DataItem type='MESSAGE' category='EVENT' id='controller_14' name='message' representation="DISCRETE"/>
           </DataItems>
         </Controller>
       </Components>

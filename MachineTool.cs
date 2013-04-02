@@ -37,6 +37,10 @@ namespace AdapterLab
 
         Event mMode = new Event("mode");
         Event mExec = new Event("exec");
+
+        Event mFunctionalMode = new Event("func");
+        Event mProgram = new Event("program");
+        Message mMessage = new Message("message");
         
         public MachineTool()
         {
@@ -50,6 +54,10 @@ namespace AdapterLab
 
             mAdapter.AddDataItem(mMode);
             mAdapter.AddDataItem(mExec);
+
+            mAdapter.AddDataItem(mFunctionalMode);
+            mAdapter.AddDataItem(mProgram);
+            mAdapter.AddDataItem(mMessage);
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -103,11 +111,23 @@ namespace AdapterLab
             else if (ready.Checked)
                 mExec.Value = "READY";
 
+            mFunctionalMode.Value = functionalMode.Text;
+            mProgram.Value = program.Text;
+
+            if (messageCode.Text.Length > 0)
+            {
+                mMessage.Code = messageCode.Text;
+                mMessage.Value = messageText.Text;
+            }
+
             mAdapter.SendChanged();
         }
 
         private void message_Leave(object sender, EventArgs e)
         {
+            mMessage.Value = messageText.Text;
+            mMessage.ForceChanged();
+            mAdapter.SendChanged();
         }
 
         private void xLoad_Scroll(object sender, ScrollEventArgs e)
