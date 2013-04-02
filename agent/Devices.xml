@@ -16,6 +16,8 @@
               <DataItems>
                 <DataItem type='LOAD' category='SAMPLE' id='X_6' name='xLoad' units='PERCENT' nativeUnits='PERCENT'/>
                 <DataItem type='POSITION' category='SAMPLE' id='X_7' name='xPosition' subType='ACTUAL' units='MILLIMETER' nativeUnits='INCH' coordinateSystem='MACHINE'/>
+                <DataItem type='POSITION' category='CONDITION' id='X_8' name='travel'/>
+                <DataItem type='LOAD' category='CONDITION' id='X_9' name='overload'/>
               </DataItems>
             </Linear>
             <Rotary name='C' nativeName="C" id='C_1'>
@@ -32,8 +34,19 @@
             <DataItem type='EXECUTION' category='EVENT' id='controller_12' name='exec'/>
             <DataItem type='PROGRAM' category='EVENT' id='controller_13' name='program'/>
             <DataItem type='MESSAGE' category='EVENT' id='controller_14' name='message' representation="DISCRETE"/>
+            <DataItem type='SYSTEM' category='CONDITION' id='controller_15' name='system'/>
+            <DataItem type='TEMPERATURE' category='CONDITION' id='controller_16' name='temp'/>
           </DataItems>
         </Controller>
+                <Systems name='systems' id='systems_17'>
+          <Components>
+            <Coolant name='coolant' id='coolant_18'>
+              <DataItems>
+                <DataItem type='FILL_LEVEL' category='CONDITION' id='coolant_19' name='cool_low'/>
+              </DataItems>
+            </Coolant>
+          </Components>
+        </Systems>
       </Components>
     </Device>
   </Devices>
