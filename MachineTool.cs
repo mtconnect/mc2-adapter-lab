@@ -41,6 +41,12 @@ namespace AdapterLab
         Event mFunctionalMode = new Event("func");
         Event mProgram = new Event("program");
         Message mMessage = new Message("message");
+
+        Sample mPosition = new Sample("xPosition");
+        Sample mxLoad = new Sample("xLoad");
+
+        Sample mSpeed = new Sample("sSpeed");
+        Sample mcLoad = new Sample("sLoad");
         
         public MachineTool()
         {
@@ -58,6 +64,12 @@ namespace AdapterLab
             mAdapter.AddDataItem(mFunctionalMode);
             mAdapter.AddDataItem(mProgram);
             mAdapter.AddDataItem(mMessage);
+
+            mAdapter.AddDataItem(mPosition);
+            mAdapter.AddDataItem(mxLoad);
+
+            mAdapter.AddDataItem(mSpeed);
+            mAdapter.AddDataItem(mcLoad);
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -120,6 +132,9 @@ namespace AdapterLab
                 mMessage.Value = messageText.Text;
             }
 
+            mxLoad.Value = xLoad.Value;
+            mcLoad.Value = cLoad.Value;
+
             mAdapter.SendChanged();
         }
 
@@ -132,18 +147,28 @@ namespace AdapterLab
 
         private void xLoad_Scroll(object sender, ScrollEventArgs e)
         {
+            xLoadValue.Text = xLoad.Value.ToString();
         }
 
         private void xPosition_Scroll(object sender, ScrollEventArgs e)
         {
+            mPosition.Value = xPosition.Value;
+            mAdapter.SendChanged();
+
+            xPositionValue.Text = xPosition.Value.ToString();
         }
 
         private void cLoad_Scroll(object sender, ScrollEventArgs e)
         {
+            cLoadValue.Text = cLoad.Value.ToString();
         }
 
         private void cSpeed_Scroll(object sender, ScrollEventArgs e)
         {
+            mSpeed.Value = cSpeed.Value * 100.0;
+            mAdapter.SendChanged();
+
+            cSpeedValue.Text = mSpeed.Value.ToString();
         }
 
         private void coolant_CheckedChanged(object sender, EventArgs e)

@@ -10,6 +10,22 @@
         <DataItem id="dtop_5" name="func" type="FUNCTIONAL_MODE" category="EVENT" />
       </DataItems>
       <Components>
+        <Axes name='axes' id='axes_4'>
+          <Components>
+            <Linear name='X' id='X_5'>
+              <DataItems>
+                <DataItem type='LOAD' category='SAMPLE' id='X_6' name='xLoad' units='PERCENT' nativeUnits='PERCENT'/>
+                <DataItem type='POSITION' category='SAMPLE' id='X_7' name='xPosition' subType='ACTUAL' units='MILLIMETER' nativeUnits='INCH' coordinateSystem='MACHINE'/>
+              </DataItems>
+            </Linear>
+            <Rotary name='C' nativeName="C" id='C_1'>
+              <DataItems>
+                <DataItem type='LOAD' category='SAMPLE' id='C_6' name='sLoad' units='PERCENT' nativeUnits='PERCENT'/>
+                <DataItem type="ROTARY_VELOCITY" category="SAMPLE" id="C_7" name="sSpeed" units="REVOLUTION/MINUTE"/>
+              </DataItems>
+            </Rotary>
+          </Components>
+        </Axes>
         <Controller name='controller' id='controller_10'>
           <DataItems>
             <DataItem type='CONTROLLER_MODE' category='EVENT' id='controller_11' name='mode'/>
