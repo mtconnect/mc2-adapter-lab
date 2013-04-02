@@ -6,6 +6,7 @@
       <Description model='LAB' manufacturer='MTC'>MTConnect Lab Machine - Machine</Description>
       <DataItems>
         <DataItem type='AVAILABILITY' category='EVENT' id='dtop_3' name='avail'/>
+        <DataItem type='EMERGENCY_STOP' category='EVENT' id='dtop_2' name='estop'/>
       </DataItems>
     </Device>
   </Devices>

@@ -33,6 +33,7 @@ namespace AdapterLab
     {
         Adapter mAdapter = new Adapter();
         Event mAvail = new Event("avail");
+        Event mEStop = new Event("estop");
         
         public MachineTool()
         {
@@ -41,6 +42,8 @@ namespace AdapterLab
 
             mAdapter.AddDataItem(mAvail);
             mAvail.Value = "AVAILABLE";
+
+            mAdapter.AddDataItem(mEStop);
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -69,6 +72,14 @@ namespace AdapterLab
 
         private void gather_Tick(object sender, EventArgs e)
         {
+            mAdapter.Begin();
+
+            if (estop.Checked)
+                mEStop.Value = "TRIGGERED";
+            else
+                mEStop.Value = "ARMED";
+
+            mAdapter.SendChanged();
         }
 
         private void message_Leave(object sender, EventArgs e)
