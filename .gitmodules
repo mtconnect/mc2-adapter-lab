@@ -1,0 +1,3 @@
+[submodule "dot_net_sdk"]
+	path = dot_net_sdk
+	url = git@github.com:mtconnect/dot_net_sdk.git

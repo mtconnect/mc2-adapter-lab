@@ -1,0 +1,10 @@
+bin
+obj
+*.csproj.user
+System.pdb
+TestResults
+*.suo
+*.exe
+*.obj
+Tests.VisualState.xml
+TestResult.xml

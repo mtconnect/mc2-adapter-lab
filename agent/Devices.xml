@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<MTConnectDevices xmlns:mt='urn:mtconnect.org:MTConnectDevices:1.3' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='urn:mtconnect.org:MTConnectDevices:1.3' xsi:schemaLocation='urn:mtconnect.org:MTConnectDevices:1.3 ./schemas/MTConnectDevices_1.3.xsd'>
+  <Header creationTime='2013-04-02T03:40:04Z' assetBufferSize='1024' sender='localhost' assetCount='0' version='1.2' instanceId='1' bufferSize='131072'/>
+  <Devices>
+    <Device name='MC2_LAB' uuid='MC2_LAB' id='MC2_LAB_1'>
+      <Description model='LAB' manufacturer='MTC'>MTConnect Lab Machine - Machine</Description>
+      <DataItems>
+        <DataItem type='AVAILABILITY' category='EVENT' id='dtop_3' name='avail'/>
+      </DataItems>
+    </Device>
+  </Devices>
+</MTConnectDevices>
