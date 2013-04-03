@@ -214,6 +214,8 @@ namespace AdapterLab
 
         private void cuttingToolButton_Click(object sender, EventArgs e)
         {
+            CuttingToolForm toolWindow = new CuttingToolForm(mAdapter);
+            toolWindow.Show(this);
         }
 
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
