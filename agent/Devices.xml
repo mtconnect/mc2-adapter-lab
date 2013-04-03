@@ -47,6 +47,11 @@
             </Coolant>
           </Components>
         </Systems>
+        <Sensor name='audio' id='audio_20'>
+          <DataItems>
+            <DataItem type='DISPLACEMENT' category='SAMPLE' id='audio_21' name='audio' units='SOUND_LEVEL' representation='TIME_SERIES' sampleRate='8000'/>
+          </DataItems>
+        </Sensor>
       </Components>
     </Device>
   </Devices>
