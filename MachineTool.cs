@@ -56,6 +56,8 @@ namespace AdapterLab
 
         TimeSeries mAudio = new TimeSeries("audio", 8000);
         WaveIn mWave;
+
+        Event mCommonVariable = new Event("cv");
         
         public MachineTool()
         {
@@ -100,6 +102,11 @@ namespace AdapterLab
             mWave.DeviceNumber = 0;
             mWave.WaveFormat = new WaveFormat(8000, 1);
             mWave.DataAvailable += waveIn_DataAvailable;
+
+            mAdapter.AddDataItem(mCommonVariable);
+
+            string[] row = {"1", "2", "3", "4" };
+            commonVariables.Rows.Add(row);
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -188,6 +195,17 @@ namespace AdapterLab
                 mOverload.Add(Condition.Level.FAULT, "Axis overload", "OL");
             if (travel.Checked)
                 mTravel.Add(Condition.Level.FAULT, "Travel outside boundaries", "OP");
+
+            DataGridViewColumnCollection headers = commonVariables.Columns;
+            DataGridViewCellCollection cells = commonVariables.Rows[0].Cells;
+            string result = "";
+
+            for (int i = 0; i < cells.Count; i++)
+            {
+                result += headers[i].HeaderText + ":" + cells[i].Value + " ";
+            }
+
+            mCommonVariable.Value = result;
 
             mAdapter.SendChanged();
         }

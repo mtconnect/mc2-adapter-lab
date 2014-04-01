@@ -36,6 +36,7 @@
             <DataItem type='MESSAGE' category='EVENT' id='controller_14' name='message' representation="DISCRETE"/>
             <DataItem type='SYSTEM' category='CONDITION' id='controller_15' name='system'/>
             <DataItem type='TEMPERATURE' category='CONDITION' id='controller_16' name='temp'/>
+            <DataItem type="e:COMMON_VARIABLE" category="EVENT" id="cv_117" name="cv"/>
           </DataItems>
         </Controller>
                 <Systems name='systems' id='systems_17'>
